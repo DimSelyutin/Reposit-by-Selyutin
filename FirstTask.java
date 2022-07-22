@@ -5,15 +5,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class ConsoleApp {
+public class First {
     public static void main(String[] args) throws IOException {
+    	while(true) {
         System.out.println("Введите 4-х значное число:");
         Scanner scaner = new Scanner(System.in);
         String number = scaner.nextLine();
-
+        
         try {
             if (number.length() != 4) {
-                System.out.println("Введите 4-х значное число!");
+                System.out.println("Введенное число должно быть 4-х значным!");
             } else {
                 int _firstValue;
                 int _secondValue;
@@ -25,15 +26,16 @@ public class ConsoleApp {
                 }
 
                 _firstValue = lol[0] + lol[1];
-                System.out.println(_firstValue);
+                System.out.println("Сумма первых двух чисел:"+_firstValue);
 
                 _secondValue = lol[lol.length - 1] + lol[lol.length - 2];
-                System.out.println(_secondValue);
+                System.out.println("Сумма последних двух чисел:"+_secondValue);
             }
+            
         } catch (Exception e) {
             System.out.println("Возможно вы ввели не числа! Попробуйте еще раз.");
         }
-
+    	}
     }
 
-}
+} 
