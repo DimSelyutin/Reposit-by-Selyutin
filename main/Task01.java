@@ -1,6 +1,8 @@
 package by.tc.app.main;
 
 import java.util.Scanner;
+/*Дано значение a. Не используя никаких функций и никаких операций, кроме умножения, получить значение а 8 за
+три операции и а 10 за четыре операции. */
 
 public class Task01{
     public static void main(String[] args){
