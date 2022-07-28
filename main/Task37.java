@@ -102,7 +102,7 @@ public class Task37{
                 int b = scanner.nextInt();
                 System.out.println("Введите сторону CB");
                 int c = scanner.nextInt();
-                if (((a == b) & (a == c))) {
+                if ((a == b) || (b == c) || (c == b)) {
                     System.out.println(true);
                 } else {
                     System.out.println(false);
