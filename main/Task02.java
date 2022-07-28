@@ -66,16 +66,47 @@ public class Task02{
                 }
                 break;
             case 4:
+                System.out.print("Введите число х:");
+                int x = scanner.nextInt();
+                System.out.print("y: ");
+                int y = scanner.nextInt();
+                System.out.print("Введите m:");
+                int m = scanner.nextInt();
+                System.out.print("n: ");
+                int n = scanner.nextInt();
                 
+                if (x>=m && x<=n) {
+                    System.out.println(true);
+                } else {
+                    System.out.println(false);
+                }
                 break;
             case 5:
-                
+                System.out.println("Введите трехзначное число:");
+                a = scanner.nextInt();
+                len = String.valueOf(a).length();
+                if (len!=3) {
+                    System.out.println("Нужно трехзначное чило!");
+                } else {
+                    if ((a*a) == (Math.pow((a%10 + a/10%10 + a/100%10), 3))) { //a%10 - третье число, второе, первое
+                        System.out.println(true);
+                    } else {
+                        System.out.println(false);
+                    }
+                }
                 break;
             case 6:
-                
-                break;
-            case 7:
-                
+                System.out.println("Введите сторону AB");
+                a = scanner.nextInt();
+                System.out.println("Введите сторону AC");
+                int b = scanner.nextInt();
+                System.out.println("Введите сторону CB");
+                int c = scanner.nextInt();
+                if (((a == b) & (a == c))) {
+                    System.out.println(true);
+                } else {
+                    System.out.println(false);
+                }
                 break;
             case 8:
                 
