@@ -105,6 +105,7 @@ public class Task37{
                 int b = scanner.nextInt();
                 System.out.println("Введите сторону CB");
                 int c = scanner.nextInt();
+                
                 if (a == b) {
                     System.out.println(true);
                 } else {
@@ -114,6 +115,7 @@ public class Task37{
             case 7:
                 System.out.println("Введите трехзначное число:");
                 a = scanner.nextInt();
+                
                 if (check(a,3)) {                                      
                     char l[] = (""+ a).toCharArray();
                     int max[] = new int[3];
@@ -131,34 +133,37 @@ public class Task37{
 
                 break;
             case 8:
-            System.out.print("Введите число: ");
+                System.out.print("Введите число: ");
 
-            if (!scanner.hasNextInt()) {
-                System.out.println("Необходимо ввести число!");
-            } else {
-                a = scanner.nextInt();
-                System.out.print("Введите второе число: ");
-                int sa;
-                while (true) {
-                    // int sa = scanner.nextInt();
-                    if (a>(sa = scanner.nextInt())) {
-                        break;
-                    }
-                    System.out.println("Второе число должно быть меньше!");
-                    
-                }
-                
-                System.out.println("Генерируем степень...");
-                Double degree = Math.floor(Math.random()*4);
-                
-                System.out.println("Сгенерированая степень: "+degree);
-                System.out.println("Является ли "+a+" степенью чиcла "+sa+"?");
-                if (Math.pow(sa, degree) == a) {
-                    System.out.println(true);
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Необходимо ввести число!");
                 } else {
-                    System.out.println(false);
+                    a = scanner.nextInt();
+                    System.out.print("Введите второе число: ");
+                    int sa;
+                    
+                    while (true) {
+                        // int sa = scanner.nextInt();
+                        if (a>(sa = scanner.nextInt())) {
+                            break;
+                        }
+                        
+                        System.out.println("Второе число должно быть меньше!");
+
+                    }
+
+                    System.out.println("Генерируем степень...");
+                    Double degree = Math.floor(Math.random()*4);
+
+                    System.out.println("Сгенерированая степень: "+degree);
+                    System.out.println("Является ли "+a+" степенью чиcла "+sa+"?");
+                    
+                    if (Math.pow(sa, degree) == a) {
+                        System.out.println(true);
+                    } else {
+                        System.out.println(false);
+                    }
                 }
-            }
                 break;
             case 9:
                 System.out.print("Укажите координаты точки: \n Точка m: ");
@@ -167,13 +172,13 @@ public class Task37{
                 n = scanner.nextInt();
                 System.out.print("Теперь значения a,b,c.\n a: ");
                 a = scanner.nextInt();
-
                 System.out.print("b: ");
                 b = scanner.nextInt();
-
                 System.out.print("c: ");
                 c = scanner.nextInt();
+                
                 y = a* (n*n) + b*n+c;
+                
                 if (y==m) {
                     System.out.println(true);
                 } else {
