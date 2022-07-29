@@ -1,5 +1,6 @@
 package by.epam.tr.main;
 
+import java.util.Random;
 import java.util.Scanner;
 //         Составить линейную программу, печатающую значение true, если указанное высказывание является истинным, и
 // false — в противном случае:
@@ -13,6 +14,7 @@ import java.util.Scanner;
 8.  Заданное число N является степенью числа а (показатель степени может находиться в диапазоне от 0 до 4).
 9.  График функции у = ах2 + bх+ с проходит через заданную точку с координатами (m, п). */
 public class Task37{
+    
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер задания, которое хоитите проверить.");
@@ -23,8 +25,8 @@ public class Task37{
             System.out.println("Введите целое число!");
             System.out.print("- ");
         } int choice = scanner.nextInt();
-        int a;
-        int len;
+        int a, len;
+
         switch (choice) {
             case 1:
                 System.out.println("Введите число для сравнения:");
@@ -40,10 +42,7 @@ public class Task37{
             case 2:
                 System.out.println("Введите четырехзначное число:");
                 a = scanner.nextInt();
-                len = String.valueOf(a).length();
-                if (len!=4) {
-                    System.out.println("Нужно четырехзначное чило!");
-                } else {
+                if (check(a,4)){
                     if ((a/100%10+a/1000%10) == (a/10%10+a%10)) {
                         System.out.println("true");
                     } else {
@@ -54,10 +53,7 @@ public class Task37{
             case 3:
                 System.out.println("Введите трехзначное число:");
                 a = scanner.nextInt();
-                len = String.valueOf(a).length();
-                if (len!=3) {
-                    System.out.println("Нужно трехзначное чило!");
-                } else {
+                if (check(a,3)) {
                     if ((a%10 + a/10%10 + a/100%10)%2 == 0) {
                         System.out.println("true");
                     } else {
@@ -84,10 +80,7 @@ public class Task37{
             case 5:
                 System.out.println("Введите трехзначное число:");
                 a = scanner.nextInt();
-                len = String.valueOf(a).length();
-                if (len!=3) {
-                    System.out.println("Нужно трехзначное чило!");
-                } else {
+                if (check(a,3)) {
                     if ((a*a) == (Math.pow((a%10 + a/10%10 + a/100%10), 3))) { //a%10 - третье число, второе, первое
                         System.out.println(true);
                     } else {
@@ -102,17 +95,80 @@ public class Task37{
                 int b = scanner.nextInt();
                 System.out.println("Введите сторону CB");
                 int c = scanner.nextInt();
-                if ((a == b) || (b == c) || (c == b)) {
+                if (a == b) {
                     System.out.println(true);
                 } else {
                     System.out.println(false);
                 }
                 break;
+            case 7:
+                System.out.println("Введите трехзначное число:");
+                a = scanner.nextInt();
+                if (check(a,3)) {                                      
+                    char l[] = (""+ a).toCharArray();
+                    int max[] = new int[3];
+                    x = 0;
+                        while(x<3){
+                            max[x] = Integer.parseInt(String.valueOf(l[x]));
+                            x++;
+                        }
+                        if (max[0]+max[1]==max[2]) {
+                            System.out.println(true);
+                        } else {
+                            System.out.println(false);
+                        }
+                }
+
+                break;
             case 8:
+            System.out.print("Введите число: ");
+
+            if (!scanner.hasNextInt()) {
+                System.out.println("Необходимо ввести число!");
+            } else {
+                a = scanner.nextInt();
+                System.out.print("Введите второе число: ");
+                int sa;
+                while (true) {
+                    // int sa = scanner.nextInt();
+                    if (a>(sa = scanner.nextInt())) {
+                        break;
+                    }
+                    System.out.println("Второе число должно быть меньше!");
+                    
+                }
                 
+                System.out.println("Генерируем степень...");
+                Double degree = Math.floor(Math.random()*4);
+                
+                System.out.println("Сгенерированая степень: "+degree);
+                System.out.println("Является ли "+a+" степенью чиcла "+sa+"?");
+                if (Math.pow(sa, degree) == a) {
+                    System.out.println(true);
+                } else {
+                    System.out.println(false);
+                }
+            }
                 break;
             case 9:
-                
+                System.out.print("Укажите координаты точки: \n Точка m: ");
+                m = scanner.nextInt();
+                System.out.print("n:");
+                n = scanner.nextInt();
+                System.out.print("Теперь значения a,b,c.\n a: ");
+                a = scanner.nextInt();
+
+                System.out.print("b: ");
+                b = scanner.nextInt();
+
+                System.out.print("c: ");
+                c = scanner.nextInt();
+                y = a* (n*n) + b*n+c;
+                if (y==m) {
+                    System.out.println(true);
+                } else {
+                    System.out.println(false);
+                }
                 break;
 
             default:
@@ -123,5 +179,14 @@ public class Task37{
 
         
        
+    }
+    public static boolean check(int a,int line){
+        int len = String.valueOf(a).length();
+        if (len!=line) {
+            System.out.println("Нужно "+line+"-значное чило!");
+            return false;
+        } else{
+            return true;
+        }
     }
 }
