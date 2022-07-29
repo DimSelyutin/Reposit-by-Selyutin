@@ -14,8 +14,18 @@ import java.util.Scanner;
 8.  Заданное число N является степенью числа а (показатель степени может находиться в диапазоне от 0 до 4).
 9.  График функции у = ах2 + bх+ с проходит через заданную точку с координатами (m, п). */
 public class Task37{
-    
     public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        lessonsTask();
+        System.out.println("Для продолжения введите любой символ. Или Enter для выхода.");
+        if (scanner.nextLine() != "") {
+            lessonsTask();
+        } else {
+            System.out.println("Program is ended...");
+        }
+    }
+    
+     public static void lessonsTask(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер задания, которое хоитите проверить.");
         System.out.print("Задание №: ");
