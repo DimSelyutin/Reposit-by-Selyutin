@@ -1,4 +1,4 @@
-package by.epam.tr.main;
+package by.epam.task2.main;
 
 import java.util.Random;
 import java.util.Scanner;
