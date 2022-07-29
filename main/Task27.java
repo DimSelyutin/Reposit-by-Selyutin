@@ -1,4 +1,4 @@
-package by.tc.app.main;
+package by.epam.task2.main;
 
 import java.util.Scanner;
 /*Дано значение a. Не используя никаких функций и никаких операций, кроме умножения, получить значение а 8 за
