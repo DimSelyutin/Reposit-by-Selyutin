@@ -15,6 +15,7 @@ public class Task25{
 	double b = scanner.nextDouble();
         System.out.print("c :");
 	double c = scanner.nextDouble();
+	    
 	double x1 = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / 2 * a;
 	double x2 = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / 2 * a;
 
